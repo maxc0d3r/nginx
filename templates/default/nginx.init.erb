@@ -44,6 +44,9 @@ start() {
 stop() {
 	echo -n $"Stopping $prog: "
 	$exec -s stop
+  sleep 2
+  $exec -s quit
+  sleep 2
 	retval=$?
 	echo
 	[ $retval -eq 0 ] && rm -f $lockfile
